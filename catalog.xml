@@ -1,0 +1,12 @@
+<catalog>
+    <cd>
+        <title>Inside Binary</title>
+        <artist>Sir Nishant Jadhav</artist>
+        <country>India</country>
+    </cd>
+    <cd>
+        <title>How Robots think?</title>
+        <artist>Dr. Piyush Salunke</artist>
+        <country>India</country>
+    </cd>
+</catalog>

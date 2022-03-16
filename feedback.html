@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-1.12.2.js"></script>
+    <link rel="icon" href="koala.ico"/>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+        <a href="#" class="navbar-brand" style="padding-left: 10px;">Online Library</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    <div class="collapse navbar-collapse" id="navbarNav"></div>
+        <ul class="navbar-nav">
+            <li class="navbar-item">
+                <a href="index.html" class="nav-link">Homepage</a>
+				 </li>
+				 <li class="navbar-item">
+                <a href="books.html" class="nav-link" target="_blank">Books</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="registration.html" class="nav-link" target="_blank">Register</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="feedback.html" class="nav-link" target="_blank">Feedback</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="about.html" class="nav-link" target="_blank">About Us</a>
+            </li>
+        </ul>
+    </div>
+    
+</nav>
+<center>
+<h1>Give your feedback below:</h1></center>
+    <div class="container">
+        
+            <center>
+            
+            <br>
+            <form action="POST" class="form form-horizontal" role="form" style="width:50%">
+                <div class="form-group">
+                    <label for="name">Enter your Name: </label><input type="text" class="form-control" id="name">
+                </div>
+                    <br>
+                <div class="form-group">
+                 <label for="email">Enter your Email: </label><input type="email" class="form-control" id="email">
+                </div>
+                    <br>
+                <div class="form-group">
+                    <label for="feedback">Enter your message here: </label><textarea class="form-control" id="feedback" rows=5 columns=5></textarea>
+                </div>
+<br>
+                <button type="submit" class="btn btn-success">Submit</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <button type="cancel" class="btn btn-danger">Cancel</button>
+            </form> 
+            </center>
+    </div>
+    <center>
+        <hr><footer>
+            <br>
+            Copyright 2022, All Rights Reserved
+            </footer>
+        </center>
+</body>
+</html>

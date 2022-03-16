@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>load xml in html</title>
+</head>
+<body>
+    <h2>My CD Collection</h2>
+    <button type="button" onclick="loadxml()">View Collection</button>
+    <p id="demo">
+        <p id="title"></p>
+        <p id="country"></p>
+    </p>
+
+    <script>
+        function loadxml()
+        {
+            
+            var a=new XMLHttpRequest();
+            a.onreadystatechange=function()
+            {
+            if(this.readyState==4 && this.status==200)
+            {
+                myfunction(this);
+            }
+        };
+        a.open("GET","catalog.xml",true);
+        a.send();
+        }
+
+        function myfunction(xml)
+        {
+            var title,artist,country,i,xmltxt,txt,txt2,txt3;
+            xmltxt=xml.responseXML;
+            console.log(xmltxt);
+
+            title=xmltxt.getElementsByTagName("title");
+            artist=xmltxt.getElementsByTagName("artist");
+            country=xmltxt.getElementsByTagName("country");
+
+            txt="";
+            txt2="";
+            txt3="";
+
+            for(i=0;i<artist.length;i++)
+            {
+                txt+=artist[i].childNodes[0].nodeValue+"<br>";
+            }
+            for(i=0;i<title.length;i++)
+            {
+                txt2+=title[i].childNodes[0].nodeValue+"<br>";
+            }
+            for(i=0;i<country.length;i++)
+            {
+                txt3+=country[i].childNodes[0].nodeValue+"<br>";            
+            }
+
+            document.getElementById("demo").innerHTML=txt;
+            document.getElementById("title").innerHTML=txt2;
+            document.getElementById("country").innerHTML=txt3;
+        }
+    </script>
+</body>
+</html>

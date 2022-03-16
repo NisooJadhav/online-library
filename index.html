@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Online Library Management</title>
+        <link rel="Stylesheet" type="text/css" href="style.css">
+        <script src="jquery-1.12.2.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css">        
+        <script>
+            $(document).ready(function()
+            {
+                $("#menu").click(function()
+                {
+                    $("#dropdown").slideDown(2000)
+                });
+            });
+        </script>
+		<link rel="icon" href="koala.ico"/>
+    </head>
+
+    <body>
+			 <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+        <a href="#" class="navbar-brand" style="padding-left: 10px;">Online Library</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    <div class="collapse navbar-collapse" id="navbarNav"></div>
+        <ul class="navbar-nav">
+            <li class="navbar-item">
+                <a href="index.html" class="nav-link">Homepage</a>
+				 </li>
+				 <li class="navbar-item">
+                <a href="books.html" class="nav-link" target="_blank">Books</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="registration.html" class="nav-link" target="_blank">Register</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="feedback.html" class="nav-link" target="_blank">Feedback</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="about.html" class="nav-link" target="_blank">About Us</a>
+            </li>
+        </ul>
+    </div>
+    
+</nav>
+        <center>
+
+        <div>
+        <h1>Online Library</h1>
+        <hr>
+    
+        <p id="welcome">Welcome to Online Library</p>
+        <hr>
+        </div>
+   
+    <br>
+    <p id="p-head" align="center">Image Gallery</p>
+<table id="tbl" cellpadding="20px" align="center">
+    <tr>
+        <td>
+            <button label="Menu" id="menu">MENU</button>
+            <div id="dropdown">
+                <div id="dropdown-items">
+                    <a href="books.html" style="color:rgb(0, 72, 82)" target="_blank">Books</a><br>
+                    
+                    <a href="registration.html" style="color:rgb(0, 72, 82)" target="_blank">Register</a><br>
+                    <a href="feedback.html" style="color:rgb(0, 72, 82)" target="_blank">Feedback</a><br>
+                    <a href="about.html"  style="color:rgb(0, 72, 82)" target="_blank">About Us</a><br>
+                </div>
+            </div>
+        </td>
+        <td>
+            
+            <img src="Penguins.jpg">
+            <img src="Penguins.jpg">
+            <img src="Penguins.jpg">
+        </td>
+    </tr>
+</table>
+<hr>
+<table>
+    <tr>
+        <p id="p-head">Serving City since 1992</p>
+        <p id="text">Formed in 1992 with the motive of sharing knowledge among the community, our founder <b>Shri. Nishant Jadhav</b> had an early interest with books, he even wrote a book when he was 17. </p>
+    </tr>
+</table>
+</center>
+<br><br>
+<center>
+<hr><footer>
+    <br>
+    Copyright 2022, All Rights Reserved
+    </footer>
+</center>
+    </body>
+</html>

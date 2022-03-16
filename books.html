@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-1.12.2.js"></script>
+    <link rel="icon" href="koala.ico"/>
+    <script>
+
+        function loadTable()
+        {
+            var a=new XMLHttpRequest();
+            if(a)
+            {
+                a.onreadystatechange=function()
+                {
+                    if(this.readyState==4 && this.status==200)
+                    {
+                        const myBook=JSON.parse(a.responseText);
+                        var book='';
+                        
+                       
+                            for(const key in myBook)
+                            {
+                                book+='<tr>';
+                                book+='<td>'+key+'</td>';
+                                book+='<td>'+myBook[key]+'</td>';
+                                //alert(student);
+                                book+='</tr>';
+                            }     
+                            $("#tbl1").append(book);
+                    }
+                }
+            }
+            a.open("GET","books.json",true);
+            a.send();
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+        <a href="#" class="navbar-brand" style="padding-left: 10px;">Online Library</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    <div class="collapse navbar-collapse" id="navbarNav"></div>
+        <ul class="navbar-nav">
+            <li class="navbar-item">
+                <a href="index.html" class="nav-link">Homepage</a>
+				 </li>
+				 <li class="navbar-item">
+                <a href="books.html" class="nav-link">Books</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="registration.html" class="nav-link" target="_blank">Register</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="feedback.html" class="nav-link" target="_blank">Feedback</a>
+				 </li>
+				 <li class="navbar-item">
+				 <a href="about.html" class="nav-link" target="_blank">About Us</a>
+            </li>
+        </ul>
+    </div>
+    
+</nav>
+    <center>
+      
+        <h1>Online Library Management</h1>
+        <hr>
+    
+        <p id="welcome">Welcome to Online Library</p>
+        <hr>
+      
+    </center>
+<center>
+    <button id="btn" type="button" onClick="loadTable()">Click to load data</button>
+    <br><br>
+    <div id="demo">
+
+        <table id="tbl1" border="2" cellpadding="10px" align="center" class="table table-bordered table-bordered">
+            
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+</body>
+</html>
