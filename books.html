@@ -11,33 +11,33 @@
     <link rel="icon" href="koala.ico"/>
     <script>
 
-        function loadTable()
-        {
+function load()
+            {
             var a=new XMLHttpRequest();
             if(a)
+            a.onreadystatechange=function()
             {
-                a.onreadystatechange=function()
+                if(this.readyState==4 && this.status==200)
                 {
-                    if(this.readyState==4 && this.status==200)
+                    const response=JSON.parse(a.responseText);
+                    var c='';
+                    for(const key in response)
                     {
-                        const myBook=JSON.parse(a.responseText);
-                        var book='';
-                        
-                       
-                            for(const key in myBook)
+                        //c+=`${key}:${response[key]}`+"<br>";
+
+                        if(typeof response[key]=='object')
+                        {
+                            for (const key2 in response[key])
                             {
-                                book+='<tr>';
-                                book+='<td>'+key+'</td>';
-                                book+='<td>'+myBook[key]+'</td>';
-                                //alert(student);
-                                book+='</tr>';
-                            }     
-                            $("#tbl1").append(book);
+                                c+=response[key][key2]+"<br>";    
+                            }
+                        }   
                     }
+                    document.getElementById("demo").innerHTML=c+"<br>";    
                 }
-            }
-            a.open("GET","books.json",true);
-            a.send();
+            };
+        a.open("GET","books.json",true);
+        a.send();
         }
     </script>
 </head>
@@ -78,7 +78,7 @@
       
     </center>
 <center>
-    <button id="btn" type="button" onClick="loadTable()">Click to load data</button>
+    <button id="btn" type="button" onClick="load()">Click to load data</button>
     <br><br>
     <div id="demo">
 
